@@ -28,7 +28,7 @@ const Navbar = () => {
                 onClick={() =>
                   isLoggedIn
                     ? signOut({ callbackUrl: "/" })
-                    : signIn("google", { callbackUrl: "/dashboard" })
+                    : router.push("/api/auth/signin?callbackUrl=/dashboard")
                 }
               >
                 {isLoggedIn ? "Logout" : "SignIn"}

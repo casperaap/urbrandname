@@ -28,12 +28,12 @@ export default function Home() {
           Go to our Tool
         </Link>
       ) : (
-        <button
+        <Link
+          href="/api/auth/signin?callbackUrl=/dashboard"
           className="underline row-start-3"
-          onClick={() => signIn("google", { callbackUrl: "/dashboard" })}
         >
           Go to our Tool
-        </button>
+        </Link>
       )}
     </div>
   );
