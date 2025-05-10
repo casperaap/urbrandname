@@ -14,8 +14,624 @@
   }
 }
 
+/* make all text a bit darker by default */
+body, 
+body * {
+  color: #222;         /* dark grey instead of very light */
+}
+
+/* headings darker still and give them some bottom margin */
+h1, h2 {
+  color: #111;
+  margin-bottom: 0.75em;          /* adjust to taste */
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  background-color: #222222;
+  color:white;
+  position:sticky;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+} 
+main {
+  max-width: 850px;
+  text-align:center;
+  margin-left:auto;
+  margin-right:auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+  background-color: #F9F6F9;
+  margin:0;
+} 
+.headerbtn{
+  position: absolute;
+  top:17px;
+  right:20px;
+} 
+button{
+  background-color:#A026FF;
+  border-radius:4px;
+  color:white;
+  border:0px;
+  padding:10px;
+} 
+footer{
+  background-color: #222222;
+  color:white;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-top:30px;
+} 
+.twocol{
+  columns:2
+} 
+
+h1{
+  font-size:54px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding-top:30px;
+}
+h2{
+  font-size:40px;
+  font-weight:normal;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+p{
+  font-size:22px;
+  color:#222222;
+  line-height:1.4;
+  letter-spacing:1.5px;
+}
+input{
+  width:90%;
+  padding:10px;
+}
+section{
+  padding-top:50px;
+  padding-bottom:50px;
+}
+.underh1{
+  margin-top:-20px;
+  padding-bottom:20px;
+}
+.logofooter{
+  width:50px;
+  margin-top:30px;
+  margin-bottom:10px;
+}
+.footertxt{
+  opacity:0.7;
+  padding-bottom:30px;
+}
+.usedby{
+ padding-bottom:20px;
+}
+.twocol{
+  columns:2
+}
+.twocol{
+  columns:2
+}
+.twocol{
+  columns:2
+}
+.twocol{
+  columns:2
+}
+.trybtn{
+  padding:10px 70px;
+  font-size:16px;
+  min-width:300px;
+  background: #A026FF;
+  border:none;
+}
+
+
+.card {
+  border: 1px solid #707070;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 350px;
+  margin: 1rem;
+  text-align: left;
+  box-shadow: 0px 3px 6px #A026FF80;
+}
+.card2
+{
+  border: 1px solid #E6E6E6;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 350px;
+  margin: 1rem;
+  text-align: left;
+}
+.cardwhite{
+background: #fff;
+}
+.card img {
+  width: 100%;
+  height: 150px;
+  background: #d6aaff;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
+.card2 img {
+  width: 100%;
+  height: 150px;
+  background: #d6aaff;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
+
+.boldtitle {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size:18px;
+}
+.boldtitle2{
+  margin-top:20px;
+  padding-bottom:10px;
+}
+
+.undertitle {
+  display: block;
+  line-height: 1.4;
+  font-size:16px;
+  padding:10px 0px;
+  color:#222222;
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0rem;
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem 1rem;
+  padding-top:20px;
+}
+
+.testimonial-section {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.testimonial-section h2 {
+  margin-bottom: 2rem;
+}
+
+.highlight {
+  color: #A026FF;
+  font-weight: normal;
+}
+
+.testicard {
+  background: #EFF0F7;
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.innertesticard {
+  text-align: left;
+  max-width:50%;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.imgtext {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.name {
+  font-weight: 570;
+}
+
+.quote {
+  margin: 1rem 0;
+  font-size:14px;
+}
+
+.owns-label {
+  font-weight: 550;
+  display: block;
+  margin: 1rem 0 1rem;
+}
+
+.imgtext img {
+  width: 30px;
+  height: 30px;
+}
+
+.avatar {
+  width: 40px!important;
+  height: 40px!important;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.brand-form {
+  display: flex;
+  max-width: 600px;
+  margin: 2rem auto;
+  gap: 0.5rem;
+}
+
+.brand-form input {
+  background-color:white;
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid #707070;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  box-shadow: 0px 3px 6px #A026FF80;
+}
+
+.brand-form button {
+  background: #A026FF;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.25rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.loaditems {
+  text-align: center;
+  margin-top: 2rem;
+}
+.twocol {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+}
+.twocol2 {
+  max-width: 600px;
+}
+.generatedcard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #707070;
+  border-radius: 10px;
+  padding: 10px;
+  background: white;
+  box-shadow: 0px 3px 6px #A026FF80;
+  font-size:12px;
+  
+}
+
+.generatedcard img {
+  width: 30px;
+  height: 30px;
+  margin-right: 0.5rem;
+}
+
+.generatedcard span {
+  flex: 1;
+  text-align: left;
+  margin-left: 0.5rem;
+}
+
+.status {
+  font-weight: normal;
+  text-align:right!important;
+}
+
+.status.available {
+  color: green;
+}
+
+.status.taken {
+  color: red;
+}
+
+.alt-btn {
+  background: #A026FF;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 35px;
+  font-weight: normal;
+  font-size:16px;
+  cursor: pointer;
+  margin-top:20px;
+}
+
+.underaltbtn{
+  font-size:14px;
+  padding-top:20px;
+  color:#222222;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1e1e1e;
+  color: white;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  font-weight:550!important;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.brand img {
+  width: 24px;
+  height: 24px;
+}
+
+.brandnamespan {
+  font-weight: 600;
+  color:white;
+}
+.brandnamespanfooter {
+  font-weight: 550;
+  font-size:24px;
+  padding-top:10px;
+  margin-bottom:20px;
+}
+
+.headerbtnn {
+  background: #A026FF;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.headerbtn {
+  background: #A026FF;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+.margintop{
+  margin-top: 40px;
+}
+.twocolfooter{
+  max-width: 300px;
+  margin-top:30px;
+}
+.mobile{
+  display:none;
+}
+
+@media (max-width: 600px) {
+  h1{
+      padding-top:0px;
+      margin-top:10px;
+      font-size:48px;
+  }
+  .nomobile{
+      display:none;
+  }
+  p{
+      font-size:18px;
+      letter-spacing: 1.1px;
+  }
+  main{
+      margin:0px 10px;
+  }
+  .card-grid{
+      grid-template-columns: none;
+  }
+  .twocol{
+      grid-template-columns: none;
+      margin-bottom:10px;
+  }
+  .brand-form{
+      margin:0px 30px;
+  }
+
+  .loaditems{
+      margin:0px 30px;
+      margin-top:40px;
+  }
+  .generatedcard{
+      padding:15px;
+  }
+  .alt-btn{
+      width: 90%;
+  }
+  .mobile{
+      display:block;
+  }
+  .margintop{
+      margin-left:20px;
+      margin-right:20px;
+  }
+  .trybtn{
+      width:82%;
+  }
+  .testimonial-section{
+      padding:0rem 1rem;
+  }
+  .innertesticard{
+      max-width:100%;
+  }
+  .twocolfooter{
+
+  grid-template-columns: repeat(2, 1fr);
+  margin-bottom:30px;
+}
+.trybtn{
+  font-size:18px;
+}
+.brandnamespan{
+  font-size:18px;
+}
+}
+
+
+
+/* sign in sign up */
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #F9F6F9;
+}
+
+.signup-container .signup-card {
+  border: 1px solid #707070;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0px 3px 6px #A026FF80;
+  background: #fff;
+}
+
+.signup-container .signup-card h2 {
+  font-size: 40px;
+  font-weight: normal;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.signup-container .form-group {
+  margin-bottom: 1rem;
+  text-align:left;
+}
+
+.signup-container .form-group label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 0.5rem;
+}
+
+.signup-container .form-group input {
+  width:95%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.signup-container .signup-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.signup-container .signup-btn-primary {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #A026FF;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.signup-container .signup-btn-primary:hover {
+  background-color: #8502cc;
+}
+
+.signup-container .signup-separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.signup-container .signup-separator::before,
+.signup-container .signup-separator::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #ccc;
+}
+
+.signup-container .signup-separator::before {
+  margin-right: 0.5rem;
+}
+
+.signup-container .signup-separator::after {
+  margin-left: 0.5rem;
+}
+
+.signup-container .btn-google {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+  color:black;
+  margin-bottom:20px;
+}
+
+.signup-container .btn-google img {
+  height: 18px;
+  margin-right: 8px;
+}
+
+.signup-container .signup-footer {
+  text-align: center;
+  font-size: 16px;
+  margin-top: 1rem;
+}
+
+.signup-container .signup-footer a {
+  color: #A026FF;
+  text-decoration: none;
+  font-weight: bold;
+}
+.logosign{
+  width:60px;
+  margin-top:20px;
+  margin-bottom:-30px;
+}
+.bg-base-100 {
+  /* ensure full opacity */
+  --tw-bg-opacity: 1;
+  background-color: #222222 !important;
+}
+.xyz{
+  color:white!important;
+}
+
+@media (max-width: 600px) {
+  .signup-container {
+      padding: 1rem;
+  }
+  .signup-container .signup-row {
+      grid-template-columns: none;
+  }
 }
