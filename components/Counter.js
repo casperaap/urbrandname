@@ -46,7 +46,7 @@ export default function Counter({ title, counterId }) {
         -
       </button>
 
-      <div className="w-10 h-10 flex items-center justify-center bg-purple-500 text-white font-bold rounded">
+      <div className="w-10 h-10 flex items-center justify-center bg-[#A026FF] text-white font-bold rounded">
         {count}
       </div>
 

@@ -13,7 +13,7 @@ const Navbar = () => {
   const userFirstName = session?.user?.name?.split(" ")[0] || "Guest";
 
   return (
-    <header className="fixed inset-x-0 top-0 z-20 bg-base-100 shadow-sm">
+    <header className="fixed inset-x-0 top-0 z-20 bg-[#A026FF] shadow-sm">
       <nav className="navbar mx-auto max-w-screen-xl">
         <div className="flex-1">
           <Link href="/" className="btn btn-ghost text-xl">
@@ -37,7 +37,7 @@ const Navbar = () => {
             <li>
               <details>
                 <summary>{userFirstName}</summary>
-                <ul className="bg-base-100 rounded-t-none p-2">
+                <ul className="bg-purple-600 rounded-t-none p-2">
                   <li>
                     <a onClick={() => router.push("/dashboard")}>Tool</a>
                   </li>
