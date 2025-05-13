@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const ForWhoCards = ({ src, alt = "", title, children }) => (
   <div
   className={`
-    card w-full md:w-96 bg-white
+    card w-full bg-white
     border border-[#E6E6E6]
     rounded-xl
   `}

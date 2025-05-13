@@ -4,8 +4,8 @@ import PropTypes from "prop-types";
 const ProbSolveCard = ({ src, alt = "", title, children }) => (
   <div
     className="
-      className={`card w-full md:w-96 bg-white
-      border border-[#707070]      /* thin grey border */
+      className={`card w-full bg-white
+      border border-[#707070]
       drop-shadow-[0_6px_10px_rgba(160,38,255,0.5)] /* violet shadow */
       rounded-xl
     "

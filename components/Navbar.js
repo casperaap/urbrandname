@@ -16,13 +16,14 @@ const Navbar = () => {
     <header className="fixed inset-x-0 top-0 z-20 bg-[#A026FF] shadow-sm">
       <nav className="navbar mx-auto max-w-screen-xl">
         <div className="flex-1">
-          <Link href="/" className="btn btn-ghost text-xl">
+          <Link href="/" className="btn btn-ghost text-xl text-white hover:bg-[#a432ff] pl-0">
+            <img src="/icon.png" alt="Logo" className="w-8 h-8" />
             UrBrandName
           </Link>
         </div>
 
         <div className="flex-none">
-          <ul className="menu menu-horizontal px-1">
+          <ul className="menu menu-horizontal px-1 text-white">
             <li>
               <a
                 onClick={() =>
@@ -37,7 +38,7 @@ const Navbar = () => {
             <li>
               <details>
                 <summary>{userFirstName}</summary>
-                <ul className="bg-purple-600 rounded-t-none p-2">
+                <ul className="bg-[#A026FF] rounded-t-none p-2">
                   <li>
                     <a onClick={() => router.push("/dashboard")}>Tool</a>
                   </li>

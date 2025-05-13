@@ -11,7 +11,9 @@ import ProbSolveCard from "@/components/ProbSolveCard";
 import Review from "@/components/Review";
 import Nutshelltxt from "@/components/Nutshelletxt";
 import ForWhoCards from "@/components/ForWhoCards";
-
+import FAQ from "@/components/FAQ";
+import CheckHandleCard from "@/components/CheckHandleCard";
+import HeroHeader from "@/components/HeroHeader";
 
 export default function Home() {
   const { status } = useSession();
@@ -19,37 +21,19 @@ export default function Home() {
 
   return (
     <>
-    <div className="grid grid-rows-[auto_1fr_auto] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      {/* top row */}
-      <Navbar className="row-start-1 w-full" />
-
-      {/* main content */}
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Counter title="Counter #1" counterId={1} />
-        <Counter title="Counter #2" counterId={2} />
-        <Counter title="Counter #3" counterId={3} />
-      </main>
-
-      {/* bottom row */}
-      {isLoggedIn ? (
-        <Link href="/dashboard" className="underline row-start-3">
-          Go to our Tool
-        </Link>
-      ) : (
-        <Link
-          href="/api/auth/signin?callbackUrl=/dashboard"
-          className="underline row-start-3"
-        >
-          Go to our Tool
-        </Link>
-      )} 
+    <Navbar className="row-start-1 w-full" />
+    
+    <div className="grid w-full grid-cols-1 grid-rows-[auto_auto_1fr] items-center justify-items-stretch pt-20 pb-20">
+      <div><HeroHeader /> </div>
+      <div><CheckHandleCard /></div>
     </div>
-        <div className="min-h-screen flex flex-col">
+
+    <div className="min-h-screen flex flex-col">
       {/* …other content… */}
       <WhyUrBrandName />   {/* centered block */}
       {/* …other content… */}
       
-      <section className="flex flex-col md:flex-row items-center justify-center gap-6 px-6 md:px-0">
+      <section className="flex flex-col md:flex-row items-center justify-center gap-6 px-6 md:px-6 w-full max-w-[896px] mx-auto">
       <ProbSolveCard
         src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
         alt="Comfy sneakers"
@@ -67,7 +51,7 @@ export default function Home() {
       </section>
 
       <div className="px-6 md:px-0 w-full flex justify-center">
-      <button className="btn btn-primary bg-[#A026FF] hover:bg-[#8d1bf4] mt-8 md:mt-12 mb-8 w-full max-w-[400px] border border-[#A026FF]">Try It Out!</button>
+      <button className="btn btn-primary bg-[#A026FF] hover:bg-[#8d1bf4] mt-8 md:mt-12 mb-8 w-full max-w-[400px] border border-[#A026FF]">Try For Free!</button>
       </div>
 
       <section className="flex flex-col items-center justify-center text-center px-4 pt-16 pb-8">
@@ -79,7 +63,7 @@ export default function Home() {
 
        <Nutshelltxt/>
 
-    <section className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-[820px] mx-auto px-0">
+    <section className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-[896] px-0 md:px-6 mx-auto">
       <ForWhoCards
         src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
         alt="Comfy sneakers"
@@ -99,7 +83,7 @@ export default function Home() {
         alt="Comfy sneakers"
         title="For Solopreneurs"
       >
-        A single place instantly checking domain (.com, .ai, …), Instagram, X, TikTok handle availability + AI Brainstorming allong.
+        A Solopreneur is running on their own, finding an effective brand name available across all platforms is a must but takes time.
       </ForWhoCards>
       <ForWhoCards
         src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
@@ -112,8 +96,30 @@ export default function Home() {
       <div className="px-6 md:px-0 w-full flex justify-center">
       <button className="btn btn-primary bg-[#A026FF] hover:bg-[#8d1bf4] mt-8 md:mt-12 mb-8 w-full max-w-[400px] border border-[#A026FF]">Check UrBrandName</button>
       </div>
+
+      <div className="w-full aspect-video my-8 sm:max-w-[824px] mx-auto mt-16">
+      <iframe
+        src="https://www.youtube.com/embed/Em8puhjUfQ4?si=VNvX40wFdC16M07Q"
+        title="YouTube video"
+        className="w-full h-full rounded-xl"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowFullScreen
+      />
+      </div>  
+
+      <section className="flex flex-col items-center justify-center text-center px-4 pt-16 pb-8">
+        <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+       Frequently Asked <span className="text-[#A026FF]">Questions</span>!
+       </h2>
+      </section>
+      
+      <FAQ />    
+      <div className="px-6 md:px-0 w-full flex justify-center pt-4 pb-16">
+      <button className="btn btn-primary bg-[#A026FF] hover:bg-[#8d1bf4] mt-8 md:mt-12 mb-8 w-full max-w-[400px] border border-[#A026FF]">Check UrBrandName</button>
+      </div>
     </div>
     <Footer className="row-start-4 w-full" />
     </>
   );
 }
+// 
