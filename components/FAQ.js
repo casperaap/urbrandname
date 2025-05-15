@@ -15,7 +15,7 @@ const FAQ = () => (
       "
     >
       <div className="collapse-title font-semibold">
-        How do I create an account?
+        Why should I create an account?
       </div>
       <div className="collapse-content text-sm">
         Click the &quot;Sign Up&quot; button in the top-right corner and follow
@@ -55,7 +55,7 @@ const FAQ = () => (
       "
     >
       <div className="collapse-title font-semibold">
-        Can I change my plan later?
+        Where can I give feedback?
       </div>
       <div className="collapse-content text-sm">
         Absolutely. You can upgrade or downgrade at any time from your account

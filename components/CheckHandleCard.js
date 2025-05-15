@@ -1,6 +1,8 @@
 'use client';
 
 import { useState, useRef, useLayoutEffect } from 'react';
+import { signIn } from 'next-auth/react';
+
 
 const ICONS = {
   domain: '/globe.png',
@@ -161,16 +163,19 @@ export default function CheckHandleCard() {
 
       {/* AI Alternatives Button */}
       <div className="px-6 md:px-0 w-full flex justify-center pt-4">
-        <button className="
+      <button
+        onClick={() => signIn()}
+        className="
           btn btn-primary
           bg-[#A026FF] hover:bg-[#8d1bf4]
           mt-8 md:mt-12 mb-8
           w-full max-w-[400px]
           border border-[#A026FF]
           text-sm font-semibold text-white
-        ">
-          {buttonText}
-        </button>
+        "
+      >
+        {buttonText}
+      </button>
       </div>
     </section>
   );

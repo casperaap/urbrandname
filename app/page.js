@@ -51,7 +51,7 @@ export default function Home() {
       </section>
 
       <div className="px-6 md:px-0 w-full flex justify-center">
-      <button className="btn btn-primary bg-[#A026FF] hover:bg-[#8d1bf4] mt-8 md:mt-12 mb-8 w-full max-w-[400px] border border-[#A026FF]">Try For Free!</button>
+      <button          onClick={() =>window.scrollTo({ top: 0, behavior: 'smooth' })          }  className="btn btn-primary bg-[#A026FF] hover:bg-[#8d1bf4] mt-8 md:mt-12 mb-8 w-full max-w-[400px] border border-[#A026FF]">Try For Free!</button>
       </div>
 
       <section className="flex flex-col items-center justify-center text-center px-4 pt-16 pb-8">
@@ -94,7 +94,7 @@ export default function Home() {
       </ForWhoCards>
     </section>
       <div className="px-6 md:px-0 w-full flex justify-center">
-      <button className="btn btn-primary bg-[#A026FF] hover:bg-[#8d1bf4] mt-8 md:mt-12 mb-8 w-full max-w-[400px] border border-[#A026FF]">Check UrBrandName</button>
+      <button          onClick={() =>window.scrollTo({ top: 0, behavior: 'smooth' })          }  className="btn btn-primary bg-[#A026FF] hover:bg-[#8d1bf4] mt-8 md:mt-12 mb-8 w-full max-w-[400px] border border-[#A026FF]">Check UrBrandName</button>
       </div>
 
       <div className="w-full aspect-video my-8 sm:max-w-[824px] mx-auto mt-16">
@@ -115,7 +115,7 @@ export default function Home() {
       
       <FAQ />    
       <div className="px-6 md:px-0 w-full flex justify-center pt-4 pb-16">
-      <button className="btn btn-primary bg-[#A026FF] hover:bg-[#8d1bf4] mt-8 md:mt-12 mb-8 w-full max-w-[400px] border border-[#A026FF]">Check UrBrandName</button>
+      <button          onClick={() =>window.scrollTo({ top: 0, behavior: 'smooth' })          } className="btn btn-primary bg-[#A026FF] hover:bg-[#8d1bf4] mt-8 md:mt-12 mb-8 w-full max-w-[400px] border border-[#A026FF]">Check UrBrandName</button>
       </div>
     </div>
     <Footer className="row-start-4 w-full" />

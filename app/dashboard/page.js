@@ -2,6 +2,8 @@ import { auth } from "@/auth";
 import { redirect } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Counter from "@/components/Counter";
+import CheckHandleCard from "@/components/CheckHandleCard";
+import HeroHeader from "@/components/HeroHeader";
 
 
 export const runtime = "nodejs";
@@ -14,19 +16,13 @@ export default async function DashboardPage() {
   }
 
   return (
-    <div className="grid grid-rows-[auto_1fr_auto] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      {/* top row */}
-      <Navbar className="row-start-1 w-full" />
-
-      {/* main content */}
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Counter title="Counter #1" counterId={1}/>
-        <Counter title="Counter #2" counterId={2}/>
-        <Counter title="Counter #3" counterId={3}/>
-      </main>
-
-      {/* bottom row */}
-        DASHBOARD
+    <>
+    <Navbar className="row-start-1 w-full" />
+    
+    <div className="grid w-full grid-cols-1 grid-rows-[auto_auto_1fr] items-center justify-items-stretch pt-20 pb-20">
+      <div><HeroHeader /> </div>
+      <div><CheckHandleCard /></div>
     </div>
+    </>
   );
 }

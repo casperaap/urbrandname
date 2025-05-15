@@ -22,11 +22,11 @@ const Review = () => (
           {/* avatar + name */}
           <div className="flex items-center gap-3">
             <img
-              src="/avatar-mushtaq.jpg"
+              src="/pfpicon.jpg"
               alt="Mushtaq Bilial"
               className="w-9 h-9 rounded-full object-cover"
             />
-            <span className="font-semibold">Mushtaq Bilial</span>
+            <span className="font-semibold">Mamoun Debbagh</span>
           </div>
 
           {/* quote */}
@@ -38,16 +38,16 @@ const Review = () => (
           <p className="font-semibold">Owns:</p>
           <ul className="flex flex-col gap-2 text-sm pl-1">
             <li className="flex items-center gap-2">
-              <img src="/icons/world.svg" alt="" className="w-5 h-5" />
-              <span>www.mushtaq.com</span>
+              <img src="/globe.png" alt="" className="w-5 h-5" />
+              <span>www.answersai.com</span>
             </li>
             <li className="flex items-center gap-2">
-              <img src="/icons/instagram.svg" alt="" className="w-5 h-5" />
-              <span>@mushtaq</span>
+              <img src="/instagram.png" alt="" className="w-5 h-5" />
+              <span>@answersai</span>
             </li>
             <li className="flex items-center gap-2">
-              <img src="/icons/tiktok.svg" alt="" className="w-5 h-5" />
-              <span>@mushtaq</span>
+              <img src="/tiktok.png" alt="" className="w-5 h-5" />
+              <span>@answersai</span>
             </li>
           </ul>
         </div>

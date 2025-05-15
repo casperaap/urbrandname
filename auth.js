@@ -16,7 +16,7 @@ const config = {
       clientSecret: process.env.GOOGLE_SECRET || "",
     }),
   ],
-  secret: process.env.AUTH_SECRET, // ✅ This fixes the MissingSecret error
+  secret: process.env.AUTH_SECRET,
   adapter: MongoDBAdapter(clientPromise),
 };
 
