@@ -9,8 +9,9 @@ const ForWhoCards = ({ src, alt = "", title, children }) => (
     rounded-xl
   `}
 >
-    <figure className="px-10 pt-10">
-      <img src={src} alt={alt} className="rounded-xl" />
+    <figure className="px-10 pt-10 ">
+      <img src={src} alt={alt} className="rounded-xl border border-[#E6E6E6] drop-shadow-[0_1px_4px_rgba(160,38,255,0.5)]
+" />
     </figure>
 
     <div className="card-body px-10 items-start text-left">

@@ -35,18 +35,18 @@ export default function Home() {
       
       <section className="flex flex-col md:flex-row items-center justify-center gap-6 px-6 md:px-6 w-full max-w-[896px] mx-auto">
       <ProbSolveCard
-        src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-        alt="Comfy sneakers"
+        src="https://media.discordapp.net/attachments/902615837511405568/1376136358296551485/Secure_your_perfect_brand_name_9.png?ex=68343a5b&is=6832e8db&hm=614b5fa2ce5d4dfb3008a25d7ecda3e4c968d0b9b67aa4f790713b557de6f171&=&format=webp&quality=lossless&width=1350&height=795"
+        alt="The Problem"
         title="The Problem"
       >
-        Founders waste hours on brainstorming brand names and checking domain/social handle availability.
+        Founders waste hours on brainstorming brand names and checking domain/social handle availability seperately for each platform.
       </ProbSolveCard>
       <ProbSolveCard
         src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
         alt="Comfy sneakers"
         title="The Solution"
       >
-        A single place instantly checking domain (.com, .ai, …), Instagram, X, TikTok handle availability + AI Brainstorming allong.
+        A single place instantly checking domain (.com, .ai, …), Instagram, X, TikTok handle availability in one go + AI Brainstorming allong.
       </ProbSolveCard>
       </section>
 
@@ -65,29 +65,29 @@ export default function Home() {
 
     <section className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-[896] px-0 md:px-6 mx-auto">
       <ForWhoCards
-        src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-        alt="Comfy sneakers"
+        src="https://media.discordapp.net/attachments/902615837511405568/1375850149145743430/Secure_your_perfect_brand_name_4.png?ex=68332fcd&is=6831de4d&hm=ae67ee7ad6cba0627aae51d22b081c983d7e98b95d35c740378ed5aa3e67967e&=&format=webp&quality=lossless&width=849&height=500"
+        alt="For Founders"
         title="For Founders"
       >
         Founders wanna communicate their brand across different platforms but struggle because of the unavailability of their brand name.
       </ForWhoCards>
       <ForWhoCards
-        src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-        alt="Comfy sneakers"
+        src="https://media.discordapp.net/attachments/902615837511405568/1375850148818718741/Secure_your_perfect_brand_name_5.png?ex=68332fcd&is=6831de4d&hm=d1ecc53be88146e0b863b471943f653253c3661da37af2f249d65516ac96ad19&=&format=webp&quality=lossless&width=849&height=500"
+        alt="for Influencers"
         title="For Influencers"
       >
         Combining a domain and social media username can help you monetize your audience more effectively!
       </ForWhoCards>
       <ForWhoCards
-        src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-        alt="Comfy sneakers"
+        src="https://media.discordapp.net/attachments/902615837511405568/1375850148252356608/Secure_your_perfect_brand_name_6.png?ex=68332fcd&is=6831de4d&hm=0f472c982df7a6e435ee24906ca7e082ced6e1c5829ed285b702983abdb61e34&=&format=webp&quality=lossless&width=849&height=500"
+        alt="For Solopreneurs"
         title="For Solopreneurs"
       >
         A Solopreneur is running on their own, finding an effective brand name available across all platforms is a must but takes time.
       </ForWhoCards>
       <ForWhoCards
-        src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-        alt="Comfy sneakers"
+        src="https://media.discordapp.net/attachments/902615837511405568/1375850149439602842/Secure_your_perfect_brand_name_8.png?ex=68332fcd&is=6831de4d&hm=125cc5d569c6a4b5beb3bd1d25fee7c800ad481e11f6a70bd24e80d3568f32a1&=&format=webp&quality=lossless&width=849&height=500"
+        alt="Fpr Others"
         title="For Others"
       >
         Anyone creating a multi-platform brand needs A brand name. So lets create UrBrandName now!

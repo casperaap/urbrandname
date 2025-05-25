@@ -9,8 +9,8 @@ const FAQ = () => (
       className="
         collapse collapse-arrow
         bg-white text-[#222222]
-        border border-[#707070]
-        drop-shadow-[0_6px_10px_rgba(160,38,255,0.5)]
+        border border-[#aaaaaa]
+        drop-shadow-[0_4px_4px_rgba(160,38,255,0.5)]
         rounded-lg
       "
     >
@@ -29,8 +29,8 @@ const FAQ = () => (
       className="
         collapse collapse-arrow
         bg-white text-[#222222]
-        border border-[#707070]
-        drop-shadow-[0_6px_10px_rgba(160,38,255,0.5)]
+        border border-[#aaaaaa]
+        drop-shadow-[0_4px_4px_rgba(160,38,255,0.5)]
         rounded-lg
       "
     >
@@ -49,8 +49,8 @@ const FAQ = () => (
       className="
         collapse collapse-arrow
         bg-white text-[#222222]
-        border border-[#707070]
-        drop-shadow-[0_6px_10px_rgba(160,38,255,0.5)]
+        border border-[#aaaaaa]
+        drop-shadow-[0_4px_4px_rgba(160,38,255,0.5)]
         rounded-lg
       "
     >
@@ -69,8 +69,8 @@ const FAQ = () => (
       className="
         collapse collapse-arrow
         bg-white text-[#222222]
-        border border-[#707070]
-        drop-shadow-[0_6px_10px_rgba(160,38,255,0.5)]
+        border border-[#aaaaaa]
+        drop-shadow-[0_4px_4px_rgba(160,38,255,0.5)]
         rounded-lg
       "
     >

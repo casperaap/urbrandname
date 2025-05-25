@@ -5,8 +5,8 @@ const ProbSolveCard = ({ src, alt = "", title, children }) => (
   <div
     className="
       className={`card w-full bg-white
-      border border-[#707070]
-      drop-shadow-[0_6px_10px_rgba(160,38,255,0.5)] /* violet shadow */
+      border border-[#aaaaaa]
+      drop-shadow-[0_4px_4px_rgba(160,38,255,0.5)] /* violet shadow */
       rounded-xl
     "
   >

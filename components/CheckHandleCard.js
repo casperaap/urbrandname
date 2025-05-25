@@ -89,7 +89,7 @@ export default function CheckHandleCard() {
     >
       {/* SEARCH BAR */}
       <div
-        className="mb-8 flex w-full gap-2"
+        className="mb-8 flex w-full gap-2 max-h-[48px]"
         style={{ height: `${searchH}px` }}
       >
         <input
@@ -116,6 +116,7 @@ export default function CheckHandleCard() {
             text-sm font-semibold text-white
             shadow-[0_0_6px_rgba(160,38,255,0.5)]
             hover:opacity-90
+            max-h-[48px]
           "
           style={{ height: `${searchH}px` }}
         >
