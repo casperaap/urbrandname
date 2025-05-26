@@ -2,6 +2,8 @@
 
 import { useState, useRef, useLayoutEffect } from 'react';
 import { signIn } from 'next-auth/react';
+import { useRouter } from "next/navigation";
+
 
 
 const ICONS = {
@@ -185,7 +187,7 @@ export default function CheckHandleCard() {
       {/* AI Alternatives Button */}
       <div className="px-6 md:px-0 w-full flex justify-center pt-4">
       <button
-        onClick={() => signIn()}
+        onClick={() => router.push("/dashboard")}
         className="
           btn btn-primary
           bg-[#A026FF] hover:bg-[#8d1bf4]

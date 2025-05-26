@@ -81,7 +81,9 @@ export default function HandleAlternativeCard() {
   async function checkAvailability() {
     const clean = sanitize(handle);
     if (!clean && !description.trim()) {
-      shake(); return;
+      setShakeInputs(true);
+      setTimeout(() => setShakeInputs(false), 500); // duration should match your animation
+      return;
     }
     setLoading(true);
 
@@ -219,6 +221,9 @@ export default function HandleAlternativeCard() {
       window.removeEventListener('touchend', onUp);
     };
   }, [navDrag.current.dragging]);
+
+  const hasGenerated = displayedHandle || alternatives.length > 0;
+  const bottomButtonText = hasGenerated ? "Regenerate" : "Generate Results";
 
   return (
     <section
@@ -389,10 +394,12 @@ export default function HandleAlternativeCard() {
         <p className="mt-2 text-center text-sm text-gray-600">Checking…</p>
       )}
 
+
       {/* BIG CTA BUTTON */}
       <div className="px-6 md:px-0 w-full flex justify-center pt-4">
         <button
-          onClick={() => signIn()}
+          onClick={checkAvailability}
+          disabled={loading}
           className="
             bg-[#A026FF] hover:bg-[#8d1bf4]
             mt-6 mb-2 w-full max-w-[400px]
@@ -400,9 +407,10 @@ export default function HandleAlternativeCard() {
             text-sm font-semibold text-white
             py-3 rounded-md
             shadow-[0_0_6px_rgba(160,38,255,0.5)]
+            disabled:opacity-60
           "
         >
-          Check AI Alternatives
+          {bottomButtonText}
         </button>
       </div>
     </section>
