@@ -80,7 +80,7 @@ export default function CheckHandleCard() {
 
   const takenCount = Object.values(results).filter((v) => v === false).length;
   const buttonText =
-    takenCount >= 2 ? 'AI Found 3 Alternatives' : 'Check AI Alternatives';
+    takenCount >= 2 ? 'AI Found 3 Alternatives' : 'Use AI Alternatives';
 
   return (
     <section
