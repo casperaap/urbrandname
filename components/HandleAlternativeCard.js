@@ -257,7 +257,7 @@ export default function HandleAlternativeCard() {
             rounded-md
             border border-[#707070]
             bg-white
-            px-4 text-sm font-semibold
+            px-4 text-base font-semibold
             placeholder-gray-400 placeholder:font-semibold
             shadow-[0_0_6px_rgba(160,38,255,0.5)]
             focus:outline-none
@@ -270,7 +270,7 @@ export default function HandleAlternativeCard() {
             rounded-md
             bg-[#A026FF]
             px-6
-            text-sm font-semibold text-white
+            text-base font-semibold text-white
             shadow-[0_0_6px_rgba(160,38,255,0.5)]
             hover:opacity-90
             max-h-[48px]
@@ -295,7 +295,7 @@ export default function HandleAlternativeCard() {
           className="
             w-full resize-none
             rounded-md border border-[#707070]
-            bg-white px-4 py-2 text-sm font-semibold
+            bg-white px-4 py-2 text-base font-semibold
             placeholder-gray-400 placeholder:font-semibold
             shadow-[0_0_6px_rgba(160,38,255,0.5)]
             focus:outline-none
@@ -379,10 +379,10 @@ export default function HandleAlternativeCard() {
                 alt={`${platform} icon`}
                 className="h-7 w-7"
               />
-              <span className="flex-1 text-sm font-semibold text-gray-400">
+              <span className="flex-1 text-base font-semibold text-gray-400">
                 {displayName(platform, cardName)}
               </span>
-              <span className={`text-sm font-semibold ${labelColor}`}>
+              <span className={`text-base font-semibold ${labelColor}`}>
                 {label}
               </span>
             </div>
@@ -391,7 +391,7 @@ export default function HandleAlternativeCard() {
       </div>
 
       {loading && (
-        <p className="mt-2 text-center text-sm text-gray-600">Checking…</p>
+        <p className="mt-2 text-center text-base text-gray-600">Checking…</p>
       )}
 
 
@@ -404,7 +404,7 @@ export default function HandleAlternativeCard() {
             bg-[#A026FF] hover:bg-[#8d1bf4]
             mt-6 mb-2 w-full max-w-[400px]
             border border-[#A026FF]
-            text-sm font-semibold text-white
+            text-base font-semibold text-white
             py-3 rounded-md
             shadow-[0_0_6px_rgba(160,38,255,0.5)]
             disabled:opacity-60
