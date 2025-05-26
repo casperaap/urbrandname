@@ -80,7 +80,7 @@ export default function CheckHandleCard() {
 
   const takenCount = Object.values(results).filter((v) => v === false).length;
   const buttonText =
-    takenCount >= 2 ? 'AI Found 5 Alternatives' : 'Check AI Alternatives';
+    takenCount >= 2 ? 'AI Found 3 Alternatives' : 'Check AI Alternatives';
 
   return (
     <section
@@ -96,6 +96,7 @@ export default function CheckHandleCard() {
           value={handle}
           onChange={(e) => setHandle(e.target.value)}
           placeholder={placeholder}
+          maxLength={20}
           className="
             flex-1
             rounded-md
@@ -109,6 +110,7 @@ export default function CheckHandleCard() {
         />
         <button
           onClick={checkAvailability}
+          disabled={loading}   // ← prevents click while loading
           className="
             rounded-md
             bg-[#A026FF]
@@ -117,6 +119,7 @@ export default function CheckHandleCard() {
             shadow-[0_0_6px_rgba(160,38,255,0.5)]
             hover:opacity-90
             max-h-[48px]
+            disabled:opacity-60    // ← makes button look faded while disabled
           "
           style={{ height: `${searchH}px` }}
         >
@@ -127,6 +130,22 @@ export default function CheckHandleCard() {
       {/* RESULT CARDS */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {PLATFORMS.map((platform) => {
+          if (loading) {
+            // show shimmer skeleton
+            return (
+              <div
+                key={platform}
+                className="flex w-full items-center gap-4 rounded-lg border border-[#707070] bg-gray-100 px-4 animate-pulse"
+                style={{ height: `${cardH}px` }}
+              >
+                <div className="h-7 w-7 rounded-full bg-gray-300" />
+                <span className="flex-1 h-4 bg-gray-300 rounded w-3/4" />
+                <span className="h-4 w-12 bg-gray-200 rounded" />
+              </div>
+            );
+          }
+
+          // show the verdict card
           const verdict = results[platform];
           const label = verdict ? 'Available' : 'Taken';
           const labelColor = verdict ? 'text-green-500' : 'text-red-500';
@@ -157,6 +176,7 @@ export default function CheckHandleCard() {
           );
         })}
       </div>
+
 
       {loading && (
         <p className="mt-4 text-center text-sm text-gray-600">Checking…</p>

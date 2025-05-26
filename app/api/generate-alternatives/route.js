@@ -10,7 +10,7 @@ export async function POST(request) {
       return NextResponse.json({ error: 'Invalid description' }, { status: 400 });
     }
 
-    const prompt = `Suggest 15 brand-name alternatives for a company described as: "${description.trim()}". Return them as a single comma-separated line, no extra text.`;
+    const prompt = `Suggest 15 brand-name alternatives for a company described as: "${description.trim()}". Return them as a single comma-separated line, no extra text. (the alternatives cannot include symbols or spaces.)`;
 
     const completion = await openai.chat.completions.create({
       model: 'gpt-4.1-nano',

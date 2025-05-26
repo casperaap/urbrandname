@@ -39,11 +39,11 @@ export default function Home() {
         alt="The Problem"
         title="The Problem"
       >
-        Founders waste hours on brainstorming brand names and checking domain/social handle availability seperately for each platform.
+        Founders waste hours on brainstorming brand names and checking domain/social handle availability seperately on each platform.
       </ProbSolveCard>
       <ProbSolveCard
-        src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-        alt="Comfy sneakers"
+        src="https://media.discordapp.net/attachments/902615837511405568/1376524136024899655/Secure_your_perfect_brand_name_10.png?ex=6835a380&is=68345200&hm=9dddad37314dbd8c97daa147ea3f0edce85a65076ce1f1ca202640b5792e4e15&=&format=webp&quality=lossless&width=1350&height=795"
+        alt="The Solution"
         title="The Solution"
       >
         A single place instantly checking domain (.com, .ai, …), Instagram, X, TikTok handle availability in one go + AI Brainstorming allong.
@@ -63,7 +63,7 @@ export default function Home() {
 
        <Nutshelltxt/>
 
-    <section className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-[896] px-0 md:px-6 mx-auto">
+    <section className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-[896px] px-0 md:px-6 mx-auto">
       <ForWhoCards
         src="https://media.discordapp.net/attachments/902615837511405568/1375850149145743430/Secure_your_perfect_brand_name_4.png?ex=68332fcd&is=6831de4d&hm=ae67ee7ad6cba0627aae51d22b081c983d7e98b95d35c740378ed5aa3e67967e&=&format=webp&quality=lossless&width=849&height=500"
         alt="For Founders"

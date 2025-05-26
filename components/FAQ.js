@@ -15,11 +15,10 @@ const FAQ = () => (
       "
     >
       <div className="collapse-title font-semibold">
-        Why should I create an account?
+        What do I get from making an account?
       </div>
       <div className="collapse-content text-sm">
-        Click the &quot;Sign Up&quot; button in the top-right corner and follow
-        the registration steps.
+        Our full version uses AI to brainstorm brandname alternatives, checks availability and provides the best ones to you.
       </div>
     </div>
 
@@ -38,8 +37,7 @@ const FAQ = () => (
         Is there a free trial available?
       </div>
       <div className="collapse-content text-sm">
-        Yes! Every new account starts with a 14-day free trial—no credit card
-        required.
+        No there's no free trial available, we give our product for free by default.
       </div>
     </div>
 
@@ -58,9 +56,16 @@ const FAQ = () => (
         Where can I give feedback?
       </div>
       <div className="collapse-content text-sm">
-        Absolutely. You can upgrade or downgrade at any time from your account
-        settings.
-      </div>
+          You can give feedback on our product by filling in this{" "}
+          <a
+            href="https://forms.gle/jVvzsEnkbpv25Fmp8"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline"
+          >
+            forum
+          </a>.
+        </div>
     </div>
 
     {/* FAQ #4 */}
@@ -78,11 +83,15 @@ const FAQ = () => (
         How do I contact support?
       </div>
       <div className="collapse-content text-sm">
-        Reach out via the in-app chat or email us at&nbsp;
-        <a href="mailto:support@yourbrand.com" className="underline">
-          support@yourbrand.com
-        </a>
-        .
+          Reach out to the following X account:{" "}
+          <a
+            href="https://www.x.com/mrsapers"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline"
+          >
+            @mrsapers
+          </a>.
       </div>
     </div>
   </section>

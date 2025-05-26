@@ -38,6 +38,8 @@ export default function HandleAlternativeCard() {
 
   // Input/textarea shake state
   const [shakeInputs, setShakeInputs] = useState(false);
+  const [batches, setBatches] = useState([]);
+
 
   // Responsive width
   const wrapperRef = useRef(null);
@@ -66,78 +68,101 @@ export default function HandleAlternativeCard() {
     return platform === 'domain' ? `${base}.com` : base;
   };
 
+  async function fetchAvailability(name) {
+  const res  = await fetch('/api/check-handle', {
+    method : 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body   : JSON.stringify({ handle: name })
+  });
+  return await res.json();               // { domain, twitter, … }
+}
+
+
   async function checkAvailability() {
     const clean = sanitize(handle);
     if (!clean && !description.trim()) {
-      setShakeInputs(true);
-      setTimeout(() => setShakeInputs(false), 500); // duration of shake
-      return;
+      shake(); return;
     }
     setLoading(true);
-    try {
-      const res = await fetch('/api/check-handle+', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ handle: clean, description }),
-      });
-      const data = await res.json();
 
-      setResults({
-        domain: data.domain,
-        twitter: data.twitter,
-        instagram: data.instagram,
-        tiktok: data.tiktok,
-      });
-      setDisplayedHandle(clean);
-
-      if (data.alternatives && data.alternatives.length) {
-        setAlternatives(data.alternatives);
-        setActiveTab(clean ? 0 : 1);
-      } else {
-        setAlternatives([]);
-        setActiveTab(0);
+      if (clean) {
+        setBatches([{ name: clean, availability: null }]);
       }
-      setFadeKey(prev => prev + 1); // trigger fade animation
-    } catch (e) {
-      console.error(e);
+
+    try {
+      /* 1 ▸ root handle ---------------------------------------- */
+      if (clean) {
+        const rootAvail = await fetchAvailability(clean);
+        setResults(rootAvail);
+        setDisplayedHandle(clean);
+        setBatches([{ name: clean, availability: rootAvail }]);
+      }
+
+      /* 2 ▸ ask the AI for alternative strings ------------------ */
+      const altRes = await fetch('/api/generate-alternatives', {
+        method : 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body   : JSON.stringify({ description })
+      });
+      const { alternatives: names = [] } = await altRes.json();
+
+      /* 3+4 ▸ process alternatives incrementally, keep only those with ≥3 available platforms */
+      let altCount = 0;
+      for (const altName of names) {
+        if (altCount >= 3) break;
+        // Show shimmer while checking
+        setBatches(prev => [...prev, { name: altName, availability: null }]);
+
+        const avail = await fetchAvailability(altName);
+        const freeCount = Object.values(avail).filter(Boolean).length;
+
+        if (freeCount >= 3) {
+          setBatches(prev => {
+            // Find first batch for this altName that's still loading
+            const next = [...prev];
+            const idx = next.findIndex(
+              b => b.name === altName && b.availability === null
+            );
+            if (idx !== -1) {
+              next[idx] = { name: altName, availability: avail };
+              altCount++;
+            }
+            return next;
+          });
+        } else {
+          // Remove shimmer if not eligible
+          setBatches(prev => prev.filter(b => !(b.name === altName && b.availability === null)));
+        }
+      }
+    } catch (err) {
+      console.error(err);
     } finally {
       setLoading(false);
+      setFadeKey(k => k + 1);
     }
   }
 
-  // Which tabs to show
-  // If NO handle, only alternatives
-  const navTabs = (!displayedHandle && alternatives.length > 0)
-    ? alternatives.map((alt, idx) => ({
-        label: alt.name,
-        isMain: false,
-      })).slice(0, 4)
-    : [
-        { label: (displayedHandle || placeholder), isMain: true },
-        ...alternatives.map((alt, idx) => ({
-          label: alt.name,
-          isMain: false,
-        }))
-      ].slice(0, 4);
 
-  // Which tab is currently selected
-  const actualTab = (!displayedHandle && alternatives.length > 0)
-    ? activeTab // alternatives only, so 0=first alternative
-    : activeTab;
+  /* ─── build the nav-tabs in arrival order ───────────────────────── */
+  const navTabs = batches.length
+    ? batches.slice(0, 4).map((batch, idx) => ({
+        label : batch.name,
+        isMain: idx === 0           // first batch = original handle
+      }))
+    : [{ label: displayedHandle || placeholder, isMain: true }];
 
-  // What to display in the 4 cards
-  let cardName = displayedHandle || placeholder;
-  let cardAvail = results;
-  if ((!displayedHandle && alternatives.length > 0 && alternatives[actualTab]) ||
-      (displayedHandle && activeTab > 0 && alternatives[activeTab - 1])) {
-    const altObj = (!displayedHandle && alternatives.length > 0)
-      ? alternatives[actualTab]
-      : alternatives[activeTab - 1];
-    if (altObj) {
-      cardName = altObj.name;
-      cardAvail = altObj.availability;
-    }
-  }
+  /* ─── pick which tab is active (reuse your activeTab state) ───── */
+  const actualTab = activeTab;
+
+  /* ─── select the batch (fallback to root if nothing in batches) ── */
+  const batch    = batches[actualTab] || {
+    name       : displayedHandle || placeholder,
+    availability: results
+  };
+
+  /* ─── derive what the cards should show ───────────────────────── */
+  const cardName  = batch.name;
+  const cardAvail = batch.availability;  // undefined ⇒ still loading
 
   // Flexible swipeable nav bar logic
   const navBarRef = useRef(null);
@@ -221,6 +246,7 @@ export default function HandleAlternativeCard() {
           value={handle}
           onChange={(e) => setHandle(e.target.value)}
           placeholder={placeholder}
+          maxLength={20}
           className="
             flex-1
             rounded-md
@@ -313,18 +339,12 @@ export default function HandleAlternativeCard() {
 
       {/* RESULT CARDS (for active tab, with fade and loading skeletons) */}
       <div
-        className={classNames(
-          "grid grid-cols-1 md:grid-cols-2 gap-4 mb-4 relative transition-opacity duration-300",
-          loading ? 'opacity-50' : 'opacity-100'
-        )}
+        className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4 relative"
         key={fadeKey}
-        style={{
-          transition: 'opacity 0.4s',
-        }}
       >
         {PLATFORMS.map((platform, i) => {
-          if (loading) {
-            // Skeleton loading animation
+          // show skeleton if this batch’s data hasn’t arrived yet
+          if (cardAvail == null) {
             return (
               <div
                 key={platform}
@@ -332,14 +352,17 @@ export default function HandleAlternativeCard() {
                 style={{ height: `${cardH}px` }}
               >
                 <div className="h-7 w-7 rounded-full bg-gray-300" />
-                <span className="flex-1 h-4 bg-gray-300 rounded w-3/4"></span>
-                <span className="h-4 w-12 bg-gray-200 rounded"></span>
+                <span className="flex-1 h-4 bg-gray-300 rounded w-3/4" />
+                <span className="h-4 w-12 bg-gray-200 rounded" />
               </div>
             );
           }
-          const verdict = cardAvail[platform];
-          const label = verdict ? 'Available' : 'Taken';
-          const labelColor = verdict ? 'text-green-500' : 'text-red-500';
+
+          // once availability is present, render verdict
+          const verdict     = cardAvail[platform];
+          const label       = verdict ? 'Available' : 'Taken';
+          const labelColor  = verdict ? 'text-green-500' : 'text-red-500';
+
           return (
             <div
               key={platform}

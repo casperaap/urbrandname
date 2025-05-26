@@ -43,7 +43,13 @@ const Navbar = () => {
                     <a onClick={() => router.push("/dashboard")}>Tool</a>
                   </li>
                   <li>
-                    <a>Account</a>
+                      <a
+                      href="https://forms.gle/jVvzsEnkbpv25Fmp8"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Feedback
+                    </a>
                   </li>
                 </ul>
               </details>
