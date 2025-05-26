@@ -20,7 +20,7 @@ export default async function checkTiktok(handle) {
   /* allow Discord time to add the preview if it was empty */
   let embeds = msg.embeds ?? [];
   if (!embeds.length) {
-    await new Promise(r => setTimeout(r, 1100));
+    await new Promise(r => setTimeout(r, 1300));
     const upd = await fetch(`${WEBHOOK}/messages/${msgId}`).then(r => r.json());
     embeds = upd.embeds ?? [];
   }

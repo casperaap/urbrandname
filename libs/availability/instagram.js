@@ -23,7 +23,7 @@ export default async function checkInstagram(handle) {
 
   /* 3 — if not, give Discord ~1 s and poll the same message once */
   if (!hasEmbed) {
-    await new Promise(r => setTimeout(r, 1100));
+    await new Promise(r => setTimeout(r, 1300));
 
     const get = await fetch(
       `${WEBHOOK}/messages/${msg.id}`              // webhook-scoped GET

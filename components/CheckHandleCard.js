@@ -27,6 +27,8 @@ export default function CheckHandleCard() {
   const [displayedHandle, setDisplayedHandle] = useState('');
   const [results, setResults] = useState(DEFAULT_RESULTS);
   const [loading, setLoading] = useState(false);
+  const [shakeInputs, setShakeInputs] = useState(false);
+  const router = useRouter()
 
   const wrapperRef = useRef(null);
   const [offset, setOffset] = useState(0);
@@ -62,7 +64,11 @@ export default function CheckHandleCard() {
 
   async function checkAvailability() {
     const clean = sanitize(handle);
-    if (!clean) return;
+    if (!clean) {
+      setShakeInputs(true);
+      setTimeout(() => setShakeInputs(false), 500); // matches animation
+      return;
+    }
     setLoading(true);
     try {
       const res = await fetch('/api/check-handle', {
@@ -89,9 +95,20 @@ export default function CheckHandleCard() {
       ref={wrapperRef}
       className="w-full max-w-[894px] mx-auto px-6 pt-10 font-inter"
     >
+    <style>{`
+      .shake {
+        animation: shake .95s cubic-bezier(.36,.07,.19,.97) both;
+      }
+      @keyframes shake {
+        10%, 90% { transform: translateX(-1px); }
+        20%, 80% { transform: translateX(2px); }
+        30%, 50%, 70% { transform: translateX(-4px);}
+        40%, 60% { transform: translateX(4px);}
+      }
+    `}</style>
       {/* SEARCH BAR */}
       <div
-        className="mb-8 flex w-full gap-2 max-h-[48px]"
+        className={`mb-8 flex w-full gap-2 max-h-[48px] ${shakeInputs ? "shake" : ""}`}
         style={{ height: `${searchH}px` }}
       >
         <input

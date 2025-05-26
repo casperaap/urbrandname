@@ -24,7 +24,7 @@ export default async function checkTwitter(handle) {
   /* ---------- give Discord time to scrape ---------- */
   let embeds = msg.embeds ?? [];
   if (!embeds.length) {
-    await new Promise(r => setTimeout(r, 1100));          // ~1 s
+    await new Promise(r => setTimeout(r, 1300));          // ~1 s
     const upd = await fetch(`${WEBHOOK}/messages/${msgId}`).then(r => r.json());
     embeds = upd.embeds ?? [];
   }
